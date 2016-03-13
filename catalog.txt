@@ -1,0 +1,30 @@
+? List your comments, subreddits and titles below this
+? Subreddits are listed by their names WITHOUT the '/r/' before them
+? Comments must be preceded by '?'
+? Titles or other text to display must be preceded by '#'
+? Titles may contain markdown, e.g. # **This is a bold title**
+? Invalid listings will display an error, but will not stop the program
+? Whitespace is ignored
+? All entries must be on seperate lines
+? Below is some example data
+
+# **Some random listings**
+
+# Cats
+
+cats
+catsstandingup
+meow_irl
+
+# Dogs
+
+dogs
+dogsstandingup
+woof_irl
+
+# Videos
+
+videos
+youtube
+gifs
+

@@ -120,7 +120,7 @@ try:
                 #Calculate average score and comment count
                 averagescore = 0
                 averagecomments = 0
-                subpopularity = "[Very Low](/VL "")"
+                subpopularity = '[Very Low](/VL "")'
                 creationdates = []
                 if not len(frontpage['data']['children']) == 0:
                     for x in frontpage['data']['children']:

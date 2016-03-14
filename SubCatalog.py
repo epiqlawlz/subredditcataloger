@@ -132,13 +132,13 @@ try:
                     averagecreationdate = sum(creationdates) // len(creationdates)
                     averageage = datetime.datetime.utcnow() - datetime.datetime.fromtimestamp(averagecreationdate)
                     if (averageage < VERY_HIGH_POPULARITY_MIN):
-                        subpopularity = "[Very High](/VH "")"
+                        subpopularity = '[Very High](/VH "")'
                     elif (averageage < HIGH_POPULARITY_MIN):
-                        subpopularity = "[High](/H "")"
+                        subpopularity = '[High](/H "")'
                     elif (averageage < AVERAGE_POPULARITY_MIN):
-                        subpopularity = "[[Average](/A "")"
+                        subpopularity = '[Average](/A "")'
                     elif (averageage < LOW_POPULARITY_MIN):
-                        subpopularity = "[Low](/L "")"
+                        subpopularity = '[Low](/L "")'
 
                 activitynumbers = "{0}/{1}/{2}".format(averagescore, averagecomments, activeaccounts)
                 outputfile.write('{0} | {1} | {2} | {3} | {4} \n'.format(subname, subcount, activitynumbers, subpopularity, subtitle))

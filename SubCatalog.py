@@ -120,7 +120,7 @@ try:
                 #Calculate average score and comment count
                 averagescore = 0
                 averagecomments = 0
-                subpopularity = "Very Low"
+                subpopularity = "[Very Low](/VL "")"
                 creationdates = []
                 if not len(frontpage['data']['children']) == 0:
                     for x in frontpage['data']['children']:
@@ -132,14 +132,14 @@ try:
                     averagecreationdate = sum(creationdates) // len(creationdates)
                     averageage = datetime.datetime.utcnow() - datetime.datetime.fromtimestamp(averagecreationdate)
                     if (averageage < VERY_HIGH_POPULARITY_MIN):
-                        subpopularity = "Very High"
+                        subpopularity = "[Very High](/VH "")"
                     elif (averageage < HIGH_POPULARITY_MIN):
-                        subpopularity = "High"
+                        subpopularity = "[High](/H "")"
                     elif (averageage < AVERAGE_POPULARITY_MIN):
-                        subpopularity = "Average"
+                        subpopularity = "[[Average](/A "")"
                     elif (averageage < LOW_POPULARITY_MIN):
-                        subpopularity = "Low"
-                
+                        subpopularity = "[Low](/L "")"
+
                 activitynumbers = "{0}/{1}/{2}".format(averagescore, averagecomments, activeaccounts)
                 outputfile.write('{0} | {1} | {2} | {3} | {4} \n'.format(subname, subcount, activitynumbers, subpopularity, subtitle))
                 

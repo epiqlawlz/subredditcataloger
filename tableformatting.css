@@ -1,0 +1,48 @@
+/* Wiki Activity Table Coloring */
+/* Add this to your stylesheet for activity cell coloring*/
+
+.wiki-page .wiki-page-content .md.wiki td a{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.wiki-page.res-nightmode .wiki-page-content .md.wiki td a{
+    color: #d55;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.wiki-page .wiki-page-content .md.wiki td a[href="/VH"]{
+    color: black;
+    background-color: #ff0000;
+}
+.wiki-page .wiki-page-content .md.wiki td a[href="/H"]{
+    color: black;
+    background-color: #ffa200;
+}
+.wiki-page .wiki-page-content .md.wiki td a[href="/A"]{
+    color: black;
+    background-color: #bbff00;
+}
+.wiki-page .wiki-page-content .md.wiki td a[href="/L"]{
+    color: black;
+    background-color: #00ff99;
+}
+.wiki-page .wiki-page-content .md.wiki td a[href="/VL"]{
+    color: black;
+    background-color: #0084ff;
+}
+
+.wiki-page .wiki-page-content .md.wiki td a[href="/s"]{
+    color: black;
+}
+
+.wiki-page.res-nightmode .wiki-page-content .md.wiki td a[href="/s"]{
+    color: white;
+}
+
+.wiki-page.res-nightmode .wiki-page-content .md.wiki td{
+   border: 1px solid #777;
+}
+

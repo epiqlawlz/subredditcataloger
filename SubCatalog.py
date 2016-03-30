@@ -6,9 +6,10 @@ import re
 import datetime
 import logging
 import logging.handlers
+import codecs
 
-VERSION_STRING = 'Subreddit Cataloger v1.0 by /u/epiqlawlz\n'
-USER_AGENT = 'Python/SubredditCataloger/1.0 (by /u/epiqlawlz)'
+VERSION_STRING = 'Subreddit Cataloger v1.2 by /u/epiqlawlz\n'
+USER_AGENT = 'Python/SubredditCataloger/1.2 (by /u/epiqlawlz)'
 
 TITLE_RE = re.compile('^#.*$')          #Regex for detecting titles in catalog file
 SUBREDDIT_RE = re.compile('^[\w]+$')    #Regex for detecting subreddits in catalog file
@@ -60,7 +61,7 @@ open('output.txt', 'w').close()
 #Itterate through the catalog
 begintable = True
 try:
-    with open('output.txt', 'a') as outputfile:
+    with codecs.open('output.txt', 'a', 'utf-8') as outputfile:
         linecounter = 0
         for x in catalog:
             linecounter += 1
@@ -71,7 +72,7 @@ try:
             #If is a title listing... 
             elif TITLE_RE.match(x) != None:
                 print('Scanning ' + x[2:].strip() + '(TITLE)...')
-                outputfile.write('\n{0}  \n'.format(x[2:].strip()))
+                outputfile.write(u'\n{0}  \n'.format(x[2:].strip()))
                 begintable = True
                 continue
             
@@ -109,8 +110,8 @@ try:
                 
                 #Start building the table
                 if begintable:
-                    outputfile.write('\nName----------------------- | Sub Count------ | Activity--------- | Activity Rank | Description----------------------------------------  \n')
-                    outputfile.write('-|-:|:-:|:-:|-  \n')
+                    outputfile.write(u'\nName----------------------- | Sub Count------ | Activity--------- | Activity Rank | Description----------------------------------------\n')
+                    outputfile.write(u'-|-:|:-:|:-:|-\n')
                 begintable = False
                 subname = '/r/' + x
                 
@@ -141,8 +142,7 @@ try:
                         subpopularity = '[Low](/L "")'
 
                 activitynumbers = "{0}/{1}/{2}".format(averagescore, averagecomments, activeaccounts)
-                outputfile.write('{0} | {1} | {2} | {3} | {4} \n'.format(subname, subcount, activitynumbers, subpopularity, subtitle))
-                
+                outputfile.write(u'{0} | {1} | {2} | {3} | {4} \n'.format(subname, subcount, activitynumbers, subpopularity, subtitle))
             else:
                 logger.warning('Garbage on line {0} of catalog, skipping...'.format(linecounter))
                 print('Garbage on line {0} of catalog, skipping...'.format(linecounter))
